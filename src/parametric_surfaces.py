@@ -29,3 +29,15 @@ class parametric_surface:
         z = radius * 0.5 * (np.cos(u) - 2*np.cos(2*u)) * (2 + np.cos(v)) * (2 + np.cos(v + np.pi*2/3)) / 4
 
         return (x, y, z)
+
+    def dini(self, u, v, a=1, b=0.2):
+        """
+        Dinis surface:
+        u = [0, 4pi]
+        v = (0, 2]
+        """
+        x = a * np.cos(u)*np.sin(v)
+        y = a * np.sin(u)*np.sin(V)
+        z = a * (np.cos(v) + np.log(np.tan(0.5*v))) + b*u
+
+        return (x, y, z)
