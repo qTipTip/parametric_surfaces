@@ -37,7 +37,16 @@ class parametric_surface:
         v = (0, 2]
         """
         x = a * np.cos(u)*np.sin(v)
-        y = a * np.sin(u)*np.sin(V)
+        y = a * np.sin(u)*np.sin(v)
         z = a * (np.cos(v) + np.log(np.tan(0.5*v))) + b*u
 
         return (x, y, z)
+
+if __name__ == "__main__":
+    test = parametric_surface()
+    
+    u_val = np.linspace(0, 4*np.pi, 100)
+    v_val = np.linspace(0.001, 2, 100)
+    for u in u_val:
+        for v in v_val:
+            print(test.dini(u, v))
